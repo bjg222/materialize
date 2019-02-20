@@ -1,18 +1,16 @@
 @charset "UTF-8";
 
-// CSS Rest
+// CSS Reset
 @import "reset/main";
 
 // Utilities
 @import "utils/main";
 
-// Color
+// Design
 @import "colors/main";
-
-// Fonts
 @import "fonts/main";
 
-// Variables;
+// Variables
 @import "variables/main";
 
 // Responsive
@@ -27,5 +25,5 @@
 @import "elements/main";
 @import "forms/main";
 
-// components
+// Components
 @import "components/main";
