@@ -324,10 +324,26 @@ $grey: (
   "darken-4":   #212121
 );
 
+$navy: (
+  "base":       navy,
+  "lighten-5":  scale-color(navy, $lightness: 85%),
+  "lighten-4":  scale-color(navy, $lightness: 68%),
+  "lighten-3":  scale-color(navy, $lightness: 51%),
+  "lighten-2":  scale-color(navy, $lightness: 34%),
+  "lighten-1":  scale-color(navy, $lightness: 17%),
+  "darken-1":   scale-color(navy, $lightness: -17%),
+  "darken-2":   scale-color(navy, $lightness: -34%),
+  "darken-3":   scale-color(navy, $lightness: -51%),
+  "darken-4":   scale-color(navy, $lightness: -68%)
+);
+
 $shades: (
   "black":        #000000,
   "white":        #FFFFFF,
-  "transparent":  transparent
+  "transparent":  transparent,
+  "ivory": ivory,
+  "silver": silver,
+  "off-black": rgba(0, 0, 0, 0.87)
 );
 
 $colors: (
@@ -351,9 +367,9 @@ $colors: (
   "brown": $brown,
   "blue-grey": $blue-grey,
   "grey": $grey,
+  "navy": $navy,
   "shades": $shades
-) !default;
-
+)  !default;
 
 // usage: color("name_of_color", "type_of_color")
 // to avoid to repeating map-get($colors, ...)
