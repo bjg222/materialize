@@ -54,3 +54,48 @@
     }
     @return $result;
 }
+
+@function elements-of-type($type) {
+    @if $type == block {
+        @return address, article, aside, blockquote, center, dd, details, dir, div, dl, dt, fieldset, figcaption, figure, footer, form, frameset, h1, h2, h3, h4, h5, h6, header, hgroup, hr, isindex, main, menu, nav, noframes, noscript, ol, p, pre, section, summary, ul;
+    }
+    @if $type == inline {
+        @return a, abbr, acronym, audio, b, basefont, bdo, big, br, canvas, cite, code, command, datalist, dfn, em, embed, font, i, img, input, kbd, keygen, label, mark, meter, output, progress, q, rp, rt, ruby, s, samp, select, small, span, strike, strong, sub, sup, textarea, time, tt, u, var, video, wbr;
+    }
+    @if $type == inline-block {
+        @return img;
+    }
+    @if $type == table {
+        @return table;
+    }
+    @if $type == list-item {
+        @return li;
+    }
+    @if $type == table-row-group {
+        @return tbody;
+    }
+    @if $type == table-header-group {
+        @return thead;
+    }
+    @if $type == table-footer-group {
+        @return tfoot;
+    }
+    @if $type == table-row {
+        @return tr;
+    }
+    @if $type == table-cell {
+        @return td, th;
+    }
+    @if $type == html5-block {
+        @return article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary;
+    }
+    @if $type == html5-inline {
+        @return audio, canvas, command, datalist, embed, keygen, mark, meter, output, progress, rp, rt, ruby, time, video, wbr;
+    }
+    @if $type == text-input {
+        @return input, textarea;
+    }
+    @if $type == html5 {
+        @return article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, main, mark, menu, meter, nav, output, progress, rp, rt, ruby, section, summary, time, video, wbr;
+    }
+}
