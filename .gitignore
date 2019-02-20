@@ -45,3 +45,4 @@ _SpecRunner.html
 # Ignore compiled files
 css/
 bin/
+old/
