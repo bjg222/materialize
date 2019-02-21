@@ -28,7 +28,7 @@
 //  22. Flow Text
 //  23. Collections
 //  24. Progress Bar
-
+//  25. Parallax
 
 
 // 1. Colors
@@ -378,3 +378,13 @@ $collection-line-height: 1.5rem !default;
 // ==========================================================================
 
 $progress-bar-color: $secondary-color !default;
+
+
+// 25. Parallax
+// ==========================================================================
+
+$parallax-dark-background-color: $primary-color-dark !default;
+$parallax-on-dark-text-color: color("shades", "white") !default;
+$parallax-light-background-color: $primary-color-light !default;
+$parallax-on-light-text-color: color("shades", "black") !default;
+$parallax-viewer-distance: 300px;
