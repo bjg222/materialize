@@ -759,17 +759,29 @@ td, th{
   border-radius: 50%;
 }
 
-.center-block {
+@mixin center {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+.center-block {
+  @include center;
+}
+
+@mixin ellipsize {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ellipsize {
+    @include ellipsize;
+}
+
 .truncate {
   display: block;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  @include ellipsize;
 }
 
 .no-padding {
