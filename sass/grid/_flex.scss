@@ -15,6 +15,39 @@
 
 @if $grid-type == 'flex' {
 
+.section {
+    padding: $flexgrid-section-padding 0;
+    &.no-padding {
+        padding: 0;
+    }
+    &.full-height {
+        min-height: 110vh;
+        &-exact {
+            min-height: 100vh;
+        }
+    }
+}
+
+.container {
+    @if (type-of($flexgrid-container-width) != map) {
+        width: $flexgrid-container-width;
+    }
+    @if (type-of($flexgrid-container-max-width) != map) {
+        max-width: $flexgrid-container-max-width;
+    }
+    @include for-screens {
+        $s: for-screens-size();
+        @if (type-of($flexgrid-container-width) == map) {
+            width: map-get($flexgrid-container-width, $s);
+        }
+        @if (type-of($flexgrid-container-max-width) == map) {
+            max-width: map-get($flexgrid-container-max-width, $s);
+        }
+    }
+    margin: 0 auto;
+    padding: 0;
+}
+
 $denominators: (
     1: "full",
     2: "half",
