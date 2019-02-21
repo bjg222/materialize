@@ -39,6 +39,7 @@ h3 { font-size: $h3-fontsize; line-height: $h3-line-height; margin: ($h3-fontsiz
 h4 { font-size: $h4-fontsize; line-height: $h4-line-height; margin: ($h4-fontsize / 1.5) 0 ($h4-fontsize / 2.5) 0;}
 h5 { font-size: $h5-fontsize; line-height: $h5-line-height; margin: ($h5-fontsize / 1.5) 0 ($h5-fontsize / 2.5) 0;}
 h6 { font-size: $h6-fontsize; line-height: $h6-line-height; margin: ($h6-fontsize / 1.5) 0 ($h6-fontsize / 2.5) 0;}
+//TODO: Really, just the typography related styles should be here, because the margins go in elements
 
 // Text Styles
 em, .italic { font-style: italic; }
