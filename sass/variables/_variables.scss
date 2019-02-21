@@ -344,6 +344,14 @@ $toast-action-color: #eeff41;
 $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
 $line-height: 1.5 !default;
 $font-weight: 400 !default;
+$font-size: (
+    xs: 14px,
+    s: 14.5px,
+    m: 15px,
+    l: 15.5px,
+    xl: 16px,
+    xxl: 16.5px
+) !default;
 $light-font-weight: 0.75 * $font-weight !default;
 $thin-font-weight: 0.5 * $font-weight !default;
 $bold-font-weight: 1.5 * $font-weight !default;

@@ -11,17 +11,14 @@ a {
 html{
   line-height: $line-height;
 
-  //TODO: Update this to new screen size mixins
-  @media only screen and (min-width: 0) {
-    font-size: 14px;
+  @if (type-of($font-size) != map) {
+    font-size: $font-size;
   }
-
-  @media only screen and (min-width: $medium-screen) {
-    font-size: 14.5px;
-  }
-
-  @media only screen and (min-width: $large-screen) {
-    font-size: 15px;
+  @include for-screens {
+      $s: for-screens-size();
+      @if (type-of($font-size) == map) {
+          width: map-get($font-size, $s);
+      }
   }
 
   font-family: $font-stack;
@@ -67,6 +64,10 @@ big, .big { font-size: 1.25em; }
   }
 }
 
+//I don't understand the point of this...  I guess it's a neat trick to have
+//the font size change smoothly with screen size, but it seems like it would
+//make it hard to plan layouts around continuous breakpoints when everything
+//else is around more discrete breakpoints
 .flow-text{
   $i: 0;
   @while $i <= $intervals {
