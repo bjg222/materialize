@@ -88,10 +88,10 @@ h6 { margin: ($h6-fontsize / 1.5) 0 ($h6-fontsize / 2.5) 0; }
 
 // Dividers
 
-.divider {
+hr, .divider {
   height: 1px;
   overflow: hidden;
-  background-color: color("grey", "lighten-2");
+  background-color: $divider-color;
 }
 
 
