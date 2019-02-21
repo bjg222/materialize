@@ -1,3 +1,5 @@
+@if $grid-type == 'float' {
+
 .container {
   margin: 0 auto;
   max-width: 1280px;
@@ -33,6 +35,7 @@
   }
 }
 
+}
 
 // Mixins to eliminate code repitition
 @mixin reset-offset {
@@ -52,6 +55,7 @@
   }
 }
 
+@if $grid-type == 'float' {
 
 .row {
   margin-left: auto;
@@ -153,4 +157,6 @@
       }
     }
   }
+}
+
 }

@@ -1,3 +1,9 @@
 /*
- *  Index file to link to all sub files in this directory
+ *  Grid scaffolding
  */
+
+//Base Materialize grid using standard floats
+@import "grid";
+
+//Custom flex based grid
+@import "flex";

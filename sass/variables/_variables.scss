@@ -245,10 +245,29 @@ $screen-sizes: (
 // 12. Grid
 // ==========================================================================
 
+//Which type of grid to include: float, flex, or none
+$grid-type: 'flex' !default;
+
+//Variables for basic grid
 $num-cols: 12 !default;
 $gutter-width: 1.5rem !default;
 $element-top-margin: $gutter-width/3 !default;
 $element-bottom-margin: ($gutter-width*2)/3 !default;
+
+//Variables for flex-based grid
+$flexgrid-col-spacing: 1.5rem;
+$flexgrid-row-spacing: $flexgrid-col-spacing/3;
+$flexgrid-gutter: 1em;
+//$col-padding: $col-spacing/4;
+$flexgrid-container-width: (
+    xs: 100%,
+    s: 100%,
+    m: 90%,
+    l: 80%,
+    xl: 75%,
+    xxl: 75%
+);
+$flexgrid-container-max-width: 1200px;
 
 
 // 13. Navigation Bar
