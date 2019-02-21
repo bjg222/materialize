@@ -701,21 +701,53 @@ td, th{
 }
 
 // Text Align
+@mixin align($pos) {
+  text-align: $pos;
+}
+
 .left-align {
-  text-align: left;
+    @include align(left);
 }
 .right-align {
-  text-align: right
+    @include align(right);
 }
 .center, .center-align {
-  text-align: center;
+    @include align(center);
+}
+.justify {
+    @include align(justify);
+}
+
+
+@mixin valign($pos) {
+  display: flex;
+  align-items: if($pos == "top", flex-start, if($pos == "bottom", flex-end, center));
+}
+
+.top-valign {
+    @include valign(top);
+}
+.middle-valign {
+    @include valign(middle);
+}
+.bottom-valign {
+    @include valign(bottom);
+}
+
+@mixin align-and-valign($hpos, $vpos) {
+  @include valign($vpos);
+  justify-content: if($hpos == "left", flex-start, if($hpos == "right", flex-end, center));
+}
+
+@mixin float($pos) {
+  float: $pos; //Need important?
 }
 
 .left {
-  float: left !important;
+    @include float(left);
 }
 .right {
-  float: right !important;
+    @include float(right);
 }
 
 // No Text Select
