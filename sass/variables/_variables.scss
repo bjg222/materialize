@@ -41,7 +41,14 @@ $primary-color-dark: darken($primary-color, 15%) !default;
 $secondary-color: color("teal", "lighten-1") !default;
 $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
+$warning-color: color("yellow", "base") !default;
+$info-color: color("blue", "base") !default;
+
+$text-color: color("shades", "off-black") !default;
 $link-color: color("light-blue", "darken-1") !default;
+$link-visited-color: color("light-blue", "darken-4") !default;
+
+//TODO: enhance this to my more robust set of color variables
 
 
 // 2. Badges
@@ -335,15 +342,33 @@ $toast-action-color: #eeff41;
 // ==========================================================================
 
 $font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !default;
-$off-black: rgba(0, 0, 0, 0.87) !default;
+$line-height: 1.5 !default;
+$font-weight: 400 !default;
+$light-font-weight: 0.75 * $font-weight !default;
+$thin-font-weight: 0.5 * $font-weight !default;
+$bold-font-weight: 1.5 * $font-weight !default;
 // Header Styles
+$heading-font-weight: $font-weight !default;
+$heading-font-stack: $font-stack !default;
+$heading-line-height: 1.3 !default;
 $h1-fontsize: 4.2rem !default;
 $h2-fontsize: 3.56rem !default;
 $h3-fontsize: 2.92rem !default;
 $h4-fontsize: 2.28rem !default;
 $h5-fontsize: 1.64rem !default;
 $h6-fontsize: 1.15rem !default;
-
+$h1-line-height: 1.5 !default;
+$h2-line-height: 1.5 !default;
+$h3-line-height: 1.4 !default;
+$h4-line-height: 1.4 !default;
+$h5-line-height: 1.3 !default;
+$h6-line-height: 1.3 !default;
+// Special accent styles
+$accent-font-stack: cursive !default;
+$accent-font-weight: $light-font-weight !default;
+// Stand out display styles
+$display-font-stack: serif !default;
+$display-font-weight: $bold-font-weight !default;
 
 // 21. Footer
 // ==========================================================================

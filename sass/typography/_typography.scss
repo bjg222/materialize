@@ -1,11 +1,17 @@
 
 a {
   text-decoration: none;
+  color: $link-color;
+  &:visited,
+  &:active {
+      color: $link-visited-color;
+  }
 }
 
 html{
-  line-height: 1.5;
+  line-height: $line-height;
 
+  //TODO: Update this to new screen size mixins
   @media only screen and (min-width: 0) {
     font-size: 14px;
   }
@@ -19,30 +25,47 @@ html{
   }
 
   font-family: $font-stack;
-  font-weight: normal;
-  color: $off-black;
+  font-weight: $font-weight;
+  color: $text-color;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
-	line-height: 1.3;
+	font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+  font-family: $heading-font-stack;
 }
 
 // Header Styles
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
-h1 { font-size: $h1-fontsize; line-height: 110%; margin: ($h1-fontsize / 1.5) 0 ($h1-fontsize / 2.5) 0;}
-h2 { font-size: $h2-fontsize; line-height: 110%; margin: ($h2-fontsize / 1.5) 0 ($h2-fontsize / 2.5) 0;}
-h3 { font-size: $h3-fontsize; line-height: 110%; margin: ($h3-fontsize / 1.5) 0 ($h3-fontsize / 2.5) 0;}
-h4 { font-size: $h4-fontsize; line-height: 110%; margin: ($h4-fontsize / 1.5) 0 ($h4-fontsize / 2.5) 0;}
-h5 { font-size: $h5-fontsize; line-height: 110%; margin: ($h5-fontsize / 1.5) 0 ($h5-fontsize / 2.5) 0;}
-h6 { font-size: $h6-fontsize; line-height: 110%; margin: ($h6-fontsize / 1.5) 0 ($h6-fontsize / 2.5) 0;}
+h1 { font-size: $h1-fontsize; line-height: $h1-line-height; margin: ($h1-fontsize / 1.5) 0 ($h1-fontsize / 2.5) 0;}
+h2 { font-size: $h2-fontsize; line-height: $h2-line-height; margin: ($h2-fontsize / 1.5) 0 ($h2-fontsize / 2.5) 0;}
+h3 { font-size: $h3-fontsize; line-height: $h3-line-height; margin: ($h3-fontsize / 1.5) 0 ($h3-fontsize / 2.5) 0;}
+h4 { font-size: $h4-fontsize; line-height: $h4-line-height; margin: ($h4-fontsize / 1.5) 0 ($h4-fontsize / 2.5) 0;}
+h5 { font-size: $h5-fontsize; line-height: $h5-line-height; margin: ($h5-fontsize / 1.5) 0 ($h5-fontsize / 2.5) 0;}
+h6 { font-size: $h6-fontsize; line-height: $h6-line-height; margin: ($h6-fontsize / 1.5) 0 ($h6-fontsize / 2.5) 0;}
 
 // Text Styles
-em { font-style: italic; }
-strong { font-weight: 500; }
-small { font-size: 75%; }
-.light { font-weight: 300; }
-.thin { font-weight: 200; }
+em, .italic { font-style: italic; }
+strong, .bold { font-weight: $bold-font-weight; }
+small, .small { font-size: 0.75em; }
+big, .big { font-size: 1.25em; }
+.light { font-weight: $light-font-weight; }
+.thin { font-weight: $thin-font-weight; }
 
+.accent {
+  font-family: $accent-font-stack;
+  font-weight: $accent-font-weight;
+}
+
+.display {
+  font-family: $display-font-stack;
+  font-weight: $display-font-weight;
+}
+
+@mixin big-first-letter {
+  &::first-letter {
+    font-size: 1.5em;
+  }
+}
 
 .flow-text{
   $i: 0;
