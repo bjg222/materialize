@@ -1,3 +1,4 @@
+//Need to update media queries here
 #toast-container {
   display:block;
   position: fixed;
@@ -20,6 +21,7 @@
 }
 
 .toast {
+  //I removed the toast shadow previously
   @extend .z-depth-1;
   border-radius: 2px;
   top: 35px;
