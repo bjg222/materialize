@@ -3,7 +3,7 @@
     @each $den, $den-name in $dens {
         @each $num, $num-name in $nums {
             @if ($num < $den or ($num == 1 and $den == 1)) and (not index($done, $num / $den)) {
-                $selector: if(& and $onparent, "&", "") + "." + $prefix + if($num == 1, "", $num-name + "-") + $den-name + if($num == 1, "", "s");
+                $selector: if(& and $onparent, "&", "") + "." + "#{$prefix}" + if($num == 1, "", $num-name + "-") + $den-name + if($num == 1, "", "s");
                 #{$selector} {
                     flex: 0 0 $num / $den * 100%;
                 }
@@ -35,13 +35,15 @@
     @if (type-of($flexgrid-container-max-width) != map) {
         max-width: $flexgrid-container-max-width;
     }
-    @include for-screens {
+    @include for-screens(null, true) {
         $s: for-screens-size();
-        @if (type-of($flexgrid-container-width) == map) {
-            width: map-get($flexgrid-container-width, $s);
-        }
-        @if (type-of($flexgrid-container-max-width) == map) {
-            max-width: map-get($flexgrid-container-max-width, $s);
+        @include and-up($s) {
+            @if (type-of($flexgrid-container-width) == map) {
+                width: map-get($flexgrid-container-width, $s);
+            }
+            @if (type-of($flexgrid-container-max-width) == map) {
+                max-width: map-get($flexgrid-container-max-width, $s);
+            }
         }
     }
     margin: 0 auto;
@@ -208,13 +210,6 @@ $numerators: (
         flex: 1 1 auto;
         margin: 0;
         padding: ($flexgrid-row-spacing) 0 0 ($flexgrid-col-spacing);
-        // > div:only-child {
-        //     height: 100%;
-        // }
-
-        &.auto {
-            flex: 1 1 auto;
-        }
 
         @include for-screens-prefixes {
             $p: for-screens-prefixes-pre();

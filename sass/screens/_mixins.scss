@@ -7,8 +7,10 @@ $min: 0px;
     }
 }
 
-@mixin only($size) {
-    @if map-has-key($size-breaks, $size) {
+@mixin only($size: null) {
+    @if not $size {
+        @content;
+    } @else if map-has-key($size-breaks, $size) {
         $lims: map-get($size-breaks, $size);
         @if (nth($lims, 1) == 0px) {
             @include and-down($size) {
@@ -28,7 +30,7 @@ $min: 0px;
     }
 }
 
-@mixin and-up($size) {
+@mixin and-up($size: null) {
     @if map-has-key($size-breaks, $size) {
         $lims: map-get($size-breaks, $size);
         @if (nth($lims, 1) > 0px) {
@@ -44,7 +46,7 @@ $min: 0px;
     }
 }
 
-@mixin and-down($size) {
+@mixin and-down($size: null) {
     @if map-has-key($size-breaks, $size) {
         $lims: map-get($size-breaks, $size);
         @if (nth($lims, 2)) {
@@ -79,19 +81,22 @@ $min: 0px;
 
 $for-screens-param-size: null;
 $for-screens-param-value: null;
-$for-screens-param-is-first: null;
-@mixin for-screens($sizes: null) {
+$for-screens-param-is-blank: null;
+@mixin for-screens($sizes: null, $skip-blank: false) {
     @if (not $sizes) {
         $sizes: map-keys($size-breaks);
     }
-    $for-screens-param-is-first: true !global;
+    @if (not $skip-blank) {
+        $for-screens-param-size: null !global;
+        $for-screens-param-value: null !global;
+        $for-screens-param-is-blank: true !global;
+        @content;
+    }
+    $for-screens-param-is-blank: false !global;
     @each $size in if(type-of($sizes) == "map", map-keys($sizes), $sizes) {
         $for-screens-param-size: $size !global;
         $for-screens-param-value: if(type-of($sizes) == "map", map-get($sizes, $size), null) !global;
-        @include and-up($size) {
-            @content;
-        }
-        $for-screens-param-is-first: false !global;
+        @content;
     }
 }
 @function for-screens-size() {
@@ -100,79 +105,21 @@ $for-screens-param-is-first: null;
 @function for-screens-value() {
     @return $for-screens-param-value;
 }
-@function for-screens-is-first() {
-    @return $for-screens-param-is-first;
+@function for-screens-is-blank() {
+    @return $for-screens-param-is-blank;
 }
 
 $for-screens-prefixes-param-pre: null;
-@mixin for-screens-prefixes() {
+@mixin for-screens-prefixes($pre: false, $post: true) {
     @include for-screens() {
-        $s: for-screens-size();
-        $f: for-screens-is-first();
-        @if ($f) {
-            $for-screens-prefixes-param-pre: "" !global;
-            @content;
+        @if (for-screens-is-blank()) {
+            $for-screens-prefixes-param-pre: null !global;
+        } @else {
+            $for-screens-prefixes-param-pre: if($pre, "-", "") + for-screens-size() + if($post, "-", "") !global;
         }
-        $for-screens-prefixes-param-pre: $s + "-" !global;
         @content;
     }
 }
 @function for-screens-prefixes-pre() {
     @return $for-screens-prefixes-param-pre;
 }
-
-// @mixin screen-prefix($size, $selector, $class: null) {
-//     // $pre: "";
-//     // $done: if($size, false, true);
-//     // @while (not $done) {
-//     //     $char: quote(str-slice($class, 1, 1));
-//     //     @if $char == "&" or $char == "." or $char == "#" {
-//     //         $selector: str-slice($selector, 2);
-//     //         $pre: $pre + $char;
-//     //     } @else if  $char == " " {
-//     //         $selector: str-slice($selector, 2);
-//     //     } @else {
-//     //         $done: true;
-//     //     }
-//     // }
-//     @if (not $class) {
-//         $class: str-slice($selector, str-last-index($selector, "."));
-//         @debug $class;
-//     }
-//     $new: null;
-//     @each $s in $size {
-//         $new: if($new, $new + ", ", "") + if($s, selector-replace(#{$selector}, $class, "." + $s + str-slice($class, 2)), $selector);
-//     }
-//     #{$new} {
-//         @content;
-//     }
-// }
-
-// @mixin all-screens-prefix($selector, $class: null, $mixin: "and-up", $unprefixed: true) {
-//     $first: $unprefixed;
-//     @each $size in map-keys($sizes) {
-//         @include screen-mixin-switch($mixin, $size) {
-//             @if ($first) {
-//                 $size: (null, $size);
-//                 $first: false;
-//             }
-//             @include screen-prefix($size, $selector, $class) {
-//                 @content;
-//             }
-//         }
-//     }
-// }
-
-// @mixin for-screens($properties, $map, $mixin: "and-up") {
-//     @if (length($map) == 1) {
-//         @include properties-zip($properties, $map);
-//         @content;
-//     } @else {
-//         @each $size, $items in $map {
-//             @include screen-mixin-switch($mixin, $size) {
-//                 @include properties-zip($properties, $items);
-//                 @content;
-//             }
-//         }
-//     }
-// }
