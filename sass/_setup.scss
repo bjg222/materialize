@@ -1,0 +1,27 @@
+/*
+ * To use Materialize with customizations, import this file first, then
+ * set up your custom values for variables.  This allows you to use the
+ * utility functions or mixins in your variables if needed, as well as
+ * to tweak the color tables without needing to provide full tables from
+ * scratch (if you set up your variables first, then just call the main
+ * materialize file, you'd have to set up an entire color table rather
+ * than just append to the existing one).
+ *
+ * So your style.scss file should look like:
+ *
+ * @import "materialize/setup";
+ *
+ * $define-your-variables: here;
+ *
+ * @import "materilaize/main";
+ *
+ * your {
+ *   .custom-rules {
+ *     go: here
+ *   }
+ * }
+ *
+ */
+
+@import "utils/main";
+@import "colors/color-variables"
