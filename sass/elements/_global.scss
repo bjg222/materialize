@@ -366,6 +366,7 @@ td, th{
 // Responsive Videos
 .video-container {
     position: relative;
+    //This assumes a 16:9 video!!!  Why is that ratio hardcoded!?!
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
