@@ -37,6 +37,7 @@ textarea.materialize-textarea {
   box-shadow: none;
   box-sizing: content-box;
   transition: box-shadow .3s, border .3s;
+  //Previously I had made the above a variable, look at this idea again
 
   // Disabled input style
   &:disabled,
@@ -321,6 +322,7 @@ textarea {
 }
 
 // For textarea autoresize
+//I've noted textarea resizing can be a slight bit jumpy, text moves around...
 .hiddendiv {
   visibility: hidden;
   white-space: pre-wrap;
@@ -336,6 +338,7 @@ textarea {
 
 
 /* Autocomplete */
+//AUtocomplete doesn't show anything for a blank field, but it should show everything then!
 .autocomplete-content {
   li {
     .highlight { color: #444; }
