@@ -330,6 +330,7 @@ $tabs-bg-color: #fff !default;
 $table-border-color: rgba(0,0,0,.12) !default;
 $table-striped-color: rgba(242, 242, 242, 0.5) !default;
 $table-highlight-color: darken($table-striped-color, 15%) !default;
+$responsive-table-breakpoint: s;
 
 
 // 19. Toasts
