@@ -161,10 +161,10 @@ ul.staggered-list li {
 @include for-screens-prefixes(true, false) {
   $s: for-screens-size();
   $p: for-screens-prefixes-pre();
-  @debug $p;
+
   @include only($s) {
     .hide#{$p} {
-      display: none;
+      display: none; //Need !important?
     }
     .show#{$p} {
       display: block;
@@ -196,13 +196,6 @@ ul.staggered-list li {
         display: inline;
       }
     }
-  }
-}
-
-// Center text on mobile
-.center-on-small-only {
-  @media #{$small-and-down} {
-    text-align: center;
   }
 }
 
@@ -553,9 +546,7 @@ td, th{
   Utility Classes
 *******************/
 
-.hide {
-  display: none !important;
-}
+//TODO: all the below should use for-screens like show/hide above
 
 // Text Align
 @mixin align($pos) {
