@@ -1,3 +1,15 @@
 /*
- *  Index file to link to all sub files in this directory
+ *  Styling of form elements
  */
+
+@import "forms";
+@import "input-fields";
+@import "radio-buttons";
+@import "checkboxes";
+@import "switches";
+@import "select";
+@import "file-input";
+@import "range";
+@import "datepicker";
+@import "timepicker";
+@import "nouislider";

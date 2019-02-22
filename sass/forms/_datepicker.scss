@@ -1,3 +1,14 @@
+//The custom datepicker implementation leaves a few things to be desired, I'll probably make some tweaks:
+// - The date is shown to the left, but it's an awkward use of space.  I think above looks better
+// - The month & year are just dropdowns, I think a zoom-out style would look better and be more usable
+// - There's no "Today" or "Clear" button
+// - Spacing is off, longer months, like September, get cut off
+// - There's no ability to choose to type it in instead (well, not totally true, you can select a date
+//   from the modal, then select the text starting from the blank end and delete it and type a new one...)
+// - There's some hardcoded colors in here, and the sizes are hardcoded in pixels
+// - Doesn't fall back to default browser implementation (ie, on Android it just looks worse than the default)!
+// Also, a combined date & time picker would be useful, too
+
 /* Modal */
 .datepicker-modal {
   max-width: 325px;

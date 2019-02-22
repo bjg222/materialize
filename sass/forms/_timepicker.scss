@@ -1,3 +1,13 @@
+//The custom timepicker implementation leaves a few things to be desired, I'll probably make some tweaks
+// - The time is shown to the left, and the spacing changes as the digits change.  I think above looks better
+// - There's no "Now" or "Clear" button
+// - Look of clock feels a little rough, not as polished as in Android, and white dot at center is missing
+// - There's no ability to choose to type it in instead (Tho the date picker select entered text trick works...)
+// - No 24-hour option
+// - There's some hardcoded colors in here, and the sizes are hardcoded in pixels
+// - Doesn't fall back to default browser implementation (ie, on Android it just looks worse than the default)!
+// Also, a combined date & time picker would be useful, too
+
 /* Timepicker Containers */
 .timepicker-modal {
   max-width: 325px;
