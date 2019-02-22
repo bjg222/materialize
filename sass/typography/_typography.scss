@@ -18,10 +18,12 @@ html{
   @if (type-of($font-size) != map) {
     font-size: $font-size;
   }
-  @include for-screens {
+  @include for-screens(null, true) {
       $s: for-screens-size();
       @if (type-of($font-size) == map) {
+        @include and-up($s) {
           width: map-get($font-size, $s);
+        }
       }
   }
 
