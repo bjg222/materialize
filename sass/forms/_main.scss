@@ -2,6 +2,12 @@
  *  Styling of form elements
  */
 
+//Looked through all of these and made a few notes.
+//TODO: Most seem just fine.  Still need to do a few things:
+//Go through and make sure colors aren't hardcoded
+//Check for transitions and pull out as variables
+//Add some polish to the pickers, they're rough around the edges
+
 @import "forms";
 @import "input-fields";
 @import "radio-buttons";
