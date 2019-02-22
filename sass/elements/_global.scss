@@ -229,19 +229,32 @@ table {
   &.highlight > tbody > tr {
     transition: background-color .25s ease;
     &:hover {
-      background-color: $table-striped-color;
+      background-color: $table-highlight-color;
     }
   }
 
   &.centered {
-    thead tr th, tbody tr td {
+    > tbody, > thead, > tfoot {
+      > th, > td {
       text-align: center;
+      }
     }
   }
 }
 
+thead {
+  border-bottom: 2px solid $table-border-color;
+}
+
+tfoot {
+  border-top: 2px solid $table-border-color;
+}
+
 tr {
   border-bottom: 1px solid $table-border-color;
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 td, th{
