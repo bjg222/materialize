@@ -177,7 +177,7 @@
 
 
 /* Media Queries */
-@media #{$medium-and-up} {
+@include and-up(m) {
   .datepicker-modal {
     max-width: 625px;
   }

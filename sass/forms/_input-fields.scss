@@ -241,21 +241,25 @@ textarea.materialize-textarea {
     width: calc(100% - 3rem);
   }
 
-  .prefix ~ label { margin-left: 3rem; }
+  //The first rule below seems absolutely uneeded...?
+  //The other two rules are only needed for browsers that don't support calc, which
+  //is only true for browsers > ~4 years old, nothing I'd use
 
-  @media #{$medium-and-down} {
-    .prefix ~ input {
-      width: 86%;
-      width: calc(100% - 3rem);
-    }
-  }
+  // .prefix ~ label { margin-left: 3rem; }
 
-  @media #{$small-and-down} {
-    .prefix ~ input {
-      width: 80%;
-      width: calc(100% - 3rem);
-    }
-  }
+  // @media #{$medium-and-down} {
+  //   .prefix ~ input {
+  //     width: 86%;
+  //     width: calc(100% - 3rem);
+  //   }
+  // }
+
+  // @media #{$small-and-down} {
+  //   .prefix ~ input {
+  //     width: 80%;
+  //     width: calc(100% - 3rem);
+  //   }
+  // }
 }
 
 
