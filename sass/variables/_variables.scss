@@ -109,7 +109,7 @@ $button-floating-radius: 50% !default;
 // ==========================================================================
 
 $card-padding: 1.6rem !default;
-$card-bg-color: color("shade", "white") !default;
+$card-bg-color: color("shades", "white") !default;
 $card-link-color: color("orange", "accent-2") !default;
 $card-link-color-light: lighten($card-link-color, 20%) !default;
 
@@ -127,7 +127,7 @@ $carousel-item-width: $carousel-item-height !default;
 
 $collapsible-height: 3rem !default;
 $collapsible-line-height: $collapsible-height !default;
-$collapsible-header-color: color("shade", "white") !default;
+$collapsible-header-color: color("shades", "white") !default;
 $collapsible-border-color: color("gray", "lighten-2") !default;
 
 
@@ -153,7 +153,7 @@ $datepicker-focus: color("shades", "slight-black") !default;
 $datepicker-selected: $secondary-color !default;
 $datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%) !default;
 $datepicker-day-focus: transparentize(desaturate($secondary-color, 5%), .75) !default;
-$datepicker-disabled-day-color: fade-out(color("shades", "off-black"), 50%) !default;
+$datepicker-disabled-day-color: fade-out(color("shades", "off-black"), 0.5) !default;
 
 $timepicker-clock-color: color("shades", "off-black") !default;
 $timepicker-clock-plate-bg: color("gray", "lighten-3") !default;
@@ -260,15 +260,15 @@ $grid-type: 'flex' !default;
 //Variables for basic grid
 $float-num-cols: 12 !default;
 $float-gutter-width: 1.5rem !default;
-$float0element-top-margin: $float-gutter-width/3 !default;
+$float-element-top-margin: $float-gutter-width/3 !default;
 $float-element-bottom-margin: ($float-gutter-width*2)/3 !default;
 
 //Variables for flex-based grid
-$flexgrid-col-spacing: 1.5rem;
-$flexgrid-row-spacing: $flexgrid-col-spacing/3;
-$flexgrid-gutter: 1em;
-//$col-padding: $col-spacing/4;
-$flexgrid-container-width: (
+$flex-col-spacing: 1.5rem;
+$flex-row-spacing: $flex-col-spacing/3;
+$flex-gutter: 1em;
+//$flex-col-padding: $flex-col-spacing/4;
+$flex-container-width: (
     xs: 100%,
     s: 100%,
     m: 90%,
@@ -276,8 +276,8 @@ $flexgrid-container-width: (
     xl: 75%,
     xxl: 75%
 );
-$flexgrid-container-max-width: 1200px;
-$flexgrid-section-padding: 6rem;
+$flex-container-max-width: 1200px;
+$flex-section-padding: 6rem;
 
 // 13. Navigation Bar
 // ==========================================================================
@@ -394,8 +394,8 @@ $footer-copyright-bg-color: rgba(51,51,51,.08) !default;
 // 22. Flow Text
 // ==========================================================================
 
-$range : $large-screen - $small-screen !default;
-$intervals: 20 !default;
+$range : map-get($screen-sizes, xl) - map-get($screen-sizes, xs) !default;
+$intervals: 50 !default;
 $interval-size: $range / $intervals !default;
 
 

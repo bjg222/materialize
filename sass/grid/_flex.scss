@@ -16,7 +16,7 @@
 @if $grid-type == 'flex' {
 
 .section {
-    padding: $flexgrid-section-padding 0;
+    padding: $flex-section-padding 0;
     &.no-padding {
         padding: 0;
     }
@@ -29,20 +29,20 @@
 }
 
 .container {
-    @if (type-of($flexgrid-container-width) != map) {
-        width: $flexgrid-container-width;
+    @if (type-of($flex-container-width) != map) {
+        width: $flex-container-width;
     }
-    @if (type-of($flexgrid-container-max-width) != map) {
-        max-width: $flexgrid-container-max-width;
+    @if (type-of($flex-container-max-width) != map) {
+        max-width: $flex-container-max-width;
     }
     @include for-screens(null, true) {
         $s: for-screens-size();
         @include and-up($s) {
-            @if (type-of($flexgrid-container-width) == map) {
-                width: map-get($flexgrid-container-width, $s);
+            @if (type-of($flex-container-width) == map) {
+                width: map-get($flex-container-width, $s);
             }
-            @if (type-of($flexgrid-container-max-width) == map) {
-                max-width: map-get($flexgrid-container-max-width, $s);
+            @if (type-of($flex-container-max-width) == map) {
+                max-width: map-get($flex-container-max-width, $s);
             }
         }
     }
@@ -93,8 +93,8 @@ $numerators: (
     justify-content: center;
     align-items: stretch;
     align-content: center;
-    padding: 0 ($flexgrid-gutter);
-    margin: (-$flexgrid-row-spacing) 0 ($flexgrid-row-spacing) (-$flexgrid-col-spacing);
+    padding: 0 ($flex-gutter);
+    margin: (-$flex-row-spacing) 0 ($flex-row-spacing) (-$flex-col-spacing);
     &:last-child {
         margin-bottom: 0;
     }
@@ -209,7 +209,7 @@ $numerators: (
     .col {
         flex: 1 1 auto;
         margin: 0;
-        padding: ($flexgrid-row-spacing) 0 0 ($flexgrid-col-spacing);
+        padding: ($flex-row-spacing) 0 0 ($flex-col-spacing);
 
         @include for-screens-prefixes {
             $p: for-screens-prefixes-pre();

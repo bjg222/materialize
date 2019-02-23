@@ -160,16 +160,18 @@ textarea.materialize-textarea {
     }
   }
 
+  @if ($grid-type != null) {
   // Gutter spacing
   &.col {
     label {
-      left: $gutter-width / 2;
+      left: if($grid-type == 'flex', $flex-gutter, $float-gutter-width) / 2;
     }
 
     .prefix ~ label,
     .prefix ~ .validate ~ label {
-      width: calc(100% - 3rem - #{$gutter-width});
+      width: calc(100% - 3rem - #{if($grid-type == 'flex', $flex-gutter, $float-gutter-width)});
     }
+  }
   }
 
   position: relative;
