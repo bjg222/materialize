@@ -65,8 +65,8 @@
     background-color: $collapsible-header-color;
 
     li a {
-      padding: 0 (7.5px + $sidenav-padding)
-               0 (15px + $sidenav-padding);
+      padding: 0 ($sidenav-padding)
+               0 ($sidenav-collapsible-indent + $sidenav-padding);
     }
   }
 

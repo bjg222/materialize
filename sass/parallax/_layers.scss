@@ -50,6 +50,6 @@ html, body {
 	@include translateZ-and-scale($dist);
 }
 %plx-base {
- 	@include make-plx-layer(0px);
+ 	@include make-plx-layer(0rem);
 	position: relative;
 }

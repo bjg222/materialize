@@ -28,7 +28,7 @@
     height: 100vh;
   }
   > .plx-background {
-    @include make-plx-layer(-80px);
+    @include make-plx-layer(-5rem);
     background-size: cover;
     top: -40%;
     bottom: -40%;
