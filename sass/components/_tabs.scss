@@ -84,7 +84,7 @@
 }
 
 // Fixed Sidenav hide on smaller
-@media #{$medium-and-down} {
+@include and-down($tabs-collapse-breakpoint) {
   .tabs {
     display: flex;
 

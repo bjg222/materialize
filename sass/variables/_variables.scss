@@ -112,6 +112,8 @@ $card-padding: 1.6rem !default;
 $card-bg-color: color("shades", "white") !default;
 $card-link-color: color("orange", "accent-2") !default;
 $card-link-color-light: lighten($card-link-color, 20%) !default;
+$card-top-margin: 0.5rem !default;
+$card-bottom-margin: 1rem !default;
 
 
 // 5. Carousel
@@ -129,7 +131,8 @@ $collapsible-height: 3rem !default;
 $collapsible-line-height: $collapsible-height !default;
 $collapsible-header-color: color("shades", "white") !default;
 $collapsible-border-color: color("gray", "lighten-2") !default;
-
+$collapsible-top-margin: 0.5rem !default;
+$collapsible-bottom-margin: 1rem !default;
 
 // 7. Chips
 // ==========================================================================
@@ -143,7 +146,7 @@ $chip-margin: 0.25rem !default;
 // 8. Date + Time Picker
 // ==========================================================================
 
-$datepicker-display-font-size: 2.8rem;
+$datepicker-display-font-size: 2.8rem !default;
 $datepicker-calendar-header-color: color("gray", "base");
 $datepicker-weekday-color: color("shades", "off-black") !default;
 $datepicker-weekday-bg: darken($secondary-color, 7%) !default;
@@ -174,21 +177,21 @@ $dropdown-item-height: 3.3rem !default;
 // Text Inputs + Textarea
 $input-height: 3rem !default;
 $input-border-color: color("grey", "base") !default;
-$input-border: 1px solid $input-border-color !default;
-$input-background: #fff !default;
+$input-border: 0.08rem solid $input-border-color !default;
+$input-background: color("shades", "white") !default;
 $input-error-color: $error-color !default;
 $input-success-color: $success-color !default;
 $input-focus-color: $secondary-color !default;
-$input-font-size: 16px !default;
-$input-margin-bottom: 8px;
+$input-font-size: 1rem !default;
+$input-margin-bottom: 0.5rem;
 $input-margin: 0 0 $input-margin-bottom 0 !default;
 $input-padding: 0 !default;
-$label-font-size: .8rem !default;
-$input-disabled-color: rgba(0,0,0, .42) !default;
-$input-disabled-solid-color: #949494 !default;
-$input-disabled-border: 1px dotted $input-disabled-color !default;
-$input-invalid-border: 1px solid $input-error-color !default;
-$input-icon-size: 2rem;
+$label-font-size: 0.8rem !default;
+$input-disabled-color:  color("shades", "half-black") !default;
+$input-disabled-solid-color: color("grey", "base") !default;
+$input-disabled-border: 0.08rem dotted $input-disabled-color !default;
+$input-invalid-border: 0.08rem solid $input-error-color !default;
+$input-icon-size: 2rem !default;
 $placeholder-text-color: lighten($input-border-color, 20%) !default;
 
 // Radio Buttons
@@ -264,9 +267,9 @@ $float-element-top-margin: $float-gutter-width/3 !default;
 $float-element-bottom-margin: ($float-gutter-width*2)/3 !default;
 
 //Variables for flex-based grid
-$flex-col-spacing: 1.5rem;
-$flex-row-spacing: $flex-col-spacing/3;
-$flex-gutter: 1em;
+$flex-col-spacing: 1.5rem !default;
+$flex-row-spacing: $flex-col-spacing/3 !default;
+$flex-gutter: 1em !default;
 //$flex-col-padding: $flex-col-spacing/4;
 $flex-container-width: (
     xs: 100%,
@@ -275,9 +278,9 @@ $flex-container-width: (
     l: 80%,
     xl: 75%,
     xxl: 75%
-);
-$flex-container-max-width: 1200px;
-$flex-section-padding: 6rem;
+) !default;
+$flex-container-max-width: 1200px !default;
+$flex-section-padding: 6rem !default;
 
 // 13. Navigation Bar
 // ==========================================================================
@@ -300,6 +303,7 @@ $sidenav-bg-color: #fff !default;
 $sidenav-padding: 16px !default;
 $sidenav-item-height: 48px !default;
 $sidenav-line-height: $sidenav-item-height !default;
+$sidenav-hide-breakpoint: m !default;
 
 
 // 15. Photo Slider
@@ -322,6 +326,7 @@ $spinner-default-color: $secondary-color !default;
 $tabs-underline-color: $primary-color-light !default;
 $tabs-text-color: $primary-color !default;
 $tabs-bg-color: #fff !default;
+$tabs-collapse-breakpoint: m !default;
 
 
 // 18. Tables
@@ -330,7 +335,7 @@ $tabs-bg-color: #fff !default;
 $table-border-color: color("shades", "slight-black") !default;
 $table-striped-color: fade-out(color("grey", "base"), 0.6) !default;
 $table-highlight-color: darken($table-striped-color, 25%) !default;
-$responsive-table-breakpoint: s;
+$responsive-table-breakpoint: s !default;
 
 
 // 19. Toasts
@@ -340,6 +345,14 @@ $toast-height: 48px !default;
 $toast-color: color('gray', 'darken-4') !default;
 $toast-text-color: $text-color-on-dark !default;
 $toast-action-color: $link-color !default;
+$toast-full-width-breakpoint: s !default;
+$toast-size-and-position: (
+    xs:  (width: 100%,    bottom: 0),
+    m:   (max-width: 90%, left: 5%,  bottom: 7%),
+    l:   (max-width: 86%, left: 10%, bottom: 10%),
+    xl:  (max-width: 82%, right: 7%, top: 8%),
+    xxl: (max-width: 76%, right: 7%, top: 10%)
+) !default;
 
 
 // 20. Typography
@@ -409,12 +422,16 @@ $collection-active-color: lighten($secondary-color, 55%) !default;
 $collection-hover-bg-color: #ddd !default;
 $collection-link-color: $secondary-color !default;
 $collection-line-height: 1.5rem !default;
+$collection-top-margin: 0.5rem !default;
+$collection-bottom-margin: 1rem !default;
 
 
 // 24. Progress Bar
 // ==========================================================================
 
 $progress-bar-color: $secondary-color !default;
+$progress-bar-top-margin: 0.5rem !default;
+$progress-bar-bottom-margin: 1rem !default;
 
 
 // 25. Parallax
@@ -425,3 +442,13 @@ $parallax-on-dark-text-color: color("shades", "white") !default;
 $parallax-light-background-color: $primary-color-light !default;
 $parallax-on-light-text-color: color("shades", "black") !default;
 $parallax-viewer-distance: 300px;
+
+// 26. Modals
+// ==========================================================================
+
+$modal-width-breakpoint: m !default;
+
+// 27. Pagination
+// ==========================================================================
+
+$pagination-width-breakpoint: m !default;

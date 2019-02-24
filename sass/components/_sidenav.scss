@@ -162,7 +162,7 @@
 }
 
 // Fixed Sidenav hide on smaller
-@media #{$medium-and-down} {
+@include and-down($sidenav-hide-breakpoint) {
   .sidenav {
     &.sidenav-fixed {
       transform: translateX(-105%);

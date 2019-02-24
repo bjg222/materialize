@@ -19,7 +19,7 @@
   border-radius: 2px;
   will-change: top, opacity;
 
-  @media #{$medium-and-down} {
+  @include and-down($modal-width-breakpoint) {
    width: 80%;
   }
 
