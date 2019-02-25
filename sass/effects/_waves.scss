@@ -8,7 +8,9 @@
  * https://github.com/fians/Waves/blob/master/LICENSE
  */
 
-//Lots of hardcoded colors here!
+//TODO: convert sizes/colors
+
+
 
 .waves-effect {
   position: relative;
@@ -76,7 +78,7 @@
 }
 
 .waves-notransition {
-  //Umm, why is important in here as a string interpolation?!?
+  //TODO: Umm, why is important in here as a string interpolation?!?
   transition: none #{"!important"};
 }
 

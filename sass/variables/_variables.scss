@@ -241,9 +241,6 @@ $switch-radius: 1rem !default;
 // $medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
 // $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 
-//TODO: cascade the changes below that use my more robust responsive code
-//through all the subsequent scss files and obviate the need for the above
-
 $screen-sizes: (
     xs: 300px,
     s: 600px,

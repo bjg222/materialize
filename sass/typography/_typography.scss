@@ -71,7 +71,7 @@ big, .big { font-size: 1.25em; }
   }
 }
 
-//I don't understand the point of this...  I guess it's a neat trick to have
+//TODO: I don't understand the point of this...  I guess it's a neat trick to have
 //the font size change smoothly with screen size, but it seems like it would
 //make it hard to plan layouts around continuous breakpoints when everything
 //else is around more discrete breakpoints

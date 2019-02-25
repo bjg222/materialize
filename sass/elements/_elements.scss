@@ -1,3 +1,5 @@
+//TODO: convert sizes/colors
+
 
 button,
 input,
@@ -35,7 +37,7 @@ h6 { margin: ($h6-fontsize / 1.5) 0 ($h6-fontsize / 2.5) 0; }
 }
 
 
-//Why is this called z-depth?  It's about shadows, not z-index.  And dp has no meaning in CSS
+//TODO: Why is this called z-depth?  It's about shadows, not z-index.  And dp has no meaning in CSS
 // Z-levels
 .z-depth-0 {
   box-shadow: none !important;
@@ -165,7 +167,7 @@ ul.staggered-list li {
 
   @include only($s) {
     .hide#{$p} {
-      display: none; //Need !important?
+      display: none; //TODO: Need !important?
     }
     .show#{$p} {
       display: block;
@@ -267,7 +269,7 @@ td, th{
 }
 
 // Responsive Table
-// I don't like this implementation, for a few reasons:
+// TODO: I don't like this implementation, for a few reasons:
 // - it makes the tables scroll side to side, which isn't really an improvement,
 //   just making only the table need to scroll rather than the whole page
 // - it flips the table from vert to horiz, which is only a good idea in some
@@ -349,7 +351,7 @@ td, th{
     }
 
     tfoot {
-      //For now, until a better idea is found, just spread the footer across the bottom of the table
+      //TODO: For now, until a better idea is found, just spread the footer across the bottom of the table
       display: block;
       tr {
         display: flex;
@@ -367,7 +369,7 @@ td, th{
 // Responsive Videos
 .video-container {
     position: relative;
-    //This assumes a 16:9 video!!!  Why is that ratio hardcoded!?!
+    //TODO: This assumes a 16:9 video!!!  Why is that ratio hardcoded!?!
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
@@ -428,7 +430,7 @@ td, th{
 }
 
 @mixin float($pos) {
-  float: $pos; //Need important?
+  float: $pos; //TODO: Need important?
 }
 
 .left {
