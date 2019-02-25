@@ -22,7 +22,7 @@ html{
       $s: for-screens-size();
       @if (type-of($font-size) == map) {
         @include and-up($s) {
-          width: map-get($font-size, $s);
+          font-size: map-get($font-size, $s);
         }
       }
   }
