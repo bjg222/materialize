@@ -37,9 +37,17 @@ textarea.materialize-textarea {
   margin: $input-margin;
   padding: $input-padding;
   box-shadow: none;
-  box-sizing: content-box;
+  //Why is box sizing set to content-box?  I'm gonna change it to border box, we'll see if it breaks anything
+  box-sizing: border-box;
   transition: box-shadow .3s, border .3s;
   //TODO: Previously I had made the above a variable, look at this idea again
+
+  //Added a style to have smaller input fields
+  &.short {
+    height: $input-height-short;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
   // Disabled input style
   &:disabled,

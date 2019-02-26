@@ -99,3 +99,7 @@
         @return article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, main, mark, menu, meter, nav, output, progress, rp, rt, ruby, section, summary, time, video, wbr;
     }
 }
+
+@function strip-unit($val) {
+    @return $val / ($val * 0 + 1);
+}

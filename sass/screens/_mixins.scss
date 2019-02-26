@@ -42,7 +42,6 @@ $min: 0px;
         }
     } @else {
         @warn "Unknown size: #{$size}";
-        @debug $size;
     }
 }
 
@@ -122,4 +121,16 @@ $for-screens-prefixes-param-pre: null;
 }
 @function for-screens-prefixes-pre() {
     @return $for-screens-prefixes-param-pre;
+}
+
+//TODO: This is new, go through and find places that I should switch to it
+@mixin for-screens-properties($props) {
+    @include for-screens($props, true) {
+        $v: for-screens-value();
+        @include and-up(for-screens-size()) {
+          @each $prop, $val in $v {
+            #{$prop}: $val;
+          }
+        }
+    }
 }

@@ -465,13 +465,23 @@ td, th{
 }
 
 .ellipsize {
-    @include ellipsize;
+    @extend .truncate;
+    text-overflow: ellipsis;
+}
+
+.reverse-ellipsize {
+  @extend .ellipsize, .reverse-truncate;
 }
 
 .truncate {
-  display: block;
+  // display: block;
   white-space: nowrap;
-  @include ellipsize;
+  overflow: hidden;
+}
+
+.reverse-truncate {
+  @extend .truncate;
+  direction: rtl;
 }
 
 .no-padding {
