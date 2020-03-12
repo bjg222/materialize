@@ -21,11 +21,12 @@
   };
 
   M.validate_field = function(object) {
+    object = $(object);
     let hasLength = object.attr('data-length') !== null;
     let lenAttr = parseInt(object.attr('data-length'));
     let len = object[0].value.length;
 
-    if (len === 0 && object[0].validity.badInput === false && !object.is(':required')) {
+    if (len === 0 && object[0].validity.badInput === false && !object.is(':required') && !object.hasClass('required')) {
       if (object.hasClass('validate')) {
         object.removeClass('valid');
         object.removeClass('invalid');
@@ -34,8 +35,9 @@
       if (object.hasClass('validate')) {
         // Check for character counter attributes
         if (
-          (object.is(':valid') && hasLength && len <= lenAttr) ||
-          (object.is(':valid') && !hasLength)
+          !(object.hasClass('required') && len === 0) &&
+          ((object.is(':valid') && hasLength && len <= lenAttr) ||
+          (object.is(':valid') && !hasLength))
         ) {
           object.removeClass('invalid');
           object.addClass('valid');
@@ -250,6 +252,7 @@
       $textarea.data('original-height', $textarea.height());
       $textarea.data('previous-length', this.value.length);
       M.textareaAutoResize($textarea);
+      window.addEventListener('resize', () => M.textareaAutoResize($(this)));
     });
 
     $(document).on('keyup', text_area_selector, function() {
