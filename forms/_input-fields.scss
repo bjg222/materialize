@@ -33,6 +33,7 @@ textarea.materialize-textarea {
   outline: none;
   height: $input-height;
   width: 100%;
+  min-width: $input-min-width;
   font-size: $input-font-size;
   margin: $input-margin;
   padding: $input-padding;
@@ -122,6 +123,18 @@ textarea.materialize-textarea {
   }
 }
 
+//TODO: type specific min widths (ex, tels are much shorter than emails or urls!
+/*
+input[type=email]:not(.browser-default),
+input[type=url]:not(.browser-default),
+input[type=time]:not(.browser-default),
+input[type=date]:not(.browser-default),
+input[type=datetime]:not(.browser-default),
+input[type=datetime-local]:not(.browser-default),
+input[type=tel]:not(.browser-default),
+input[type=number]:not(.browser-default),
+input[type=search]:not(.browser-default),
+*/
 
 /* Validation Sass Placeholders */
 %valid-input-style {
@@ -174,7 +187,7 @@ textarea.materialize-textarea {
   // Gutter spacing
   &.col {
     label {
-      left: if($grid-type == 'flex', $flex-gutter, $float-gutter-width) / 2;
+      left: if($grid-type == 'flex', $flex-col-spacing, $float-gutter-width / 2);
     }
 
     .prefix ~ label,
@@ -193,15 +206,15 @@ textarea.materialize-textarea {
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 1rem;
+    /*font-size: 1rem;*/
     cursor: text;
     transition: transform .2s ease-out, color .2s ease-out;
     transform-origin: 0% 100%;
     text-align: initial;
-    transform: translateY(12px);
+    transform: translateY($input-height * 0.3);
 
     &:not(.label-icon).active {
-      transform: translateY(-14px) scale(.8);
+      transform: translateY(-$input-height * 0.1) scale(0.8);
       transform-origin: 0 0;
     }
   }
@@ -332,7 +345,7 @@ textarea {
     overflow-y: hidden; /* prevents scroll bar flash */
     padding: .8rem 0 .8rem 0; /* prevents text jump on Enter keypress */
     resize: none;
-    min-height: $input-height;
+    min-height: $textarea-min-height;
     box-sizing: border-box;
   }
 }

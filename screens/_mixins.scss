@@ -31,7 +31,9 @@ $min: 0px;
 }
 
 @mixin and-up($size: null) {
-    @if map-has-key($size-breaks, $size) {
+    @if not $size {
+        @content;
+    } @else if map-has-key($size-breaks, $size) {
         $lims: map-get($size-breaks, $size);
         @if (nth($lims, 1) > 0px) {
             @media screen and (min-width: nth($lims, 1)) {
@@ -46,7 +48,9 @@ $min: 0px;
 }
 
 @mixin and-down($size: null) {
-    @if map-has-key($size-breaks, $size) {
+    @if not $size {
+        @content;
+    } @else if map-has-key($size-breaks, $size) {
         $lims: map-get($size-breaks, $size);
         @if (nth($lims, 2)) {
             @media screen and (max-width: nth($lims, 2)) {
